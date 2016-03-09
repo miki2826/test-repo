@@ -78,8 +78,8 @@ git.then(function () {
         //    });
         //});
     })
-    .add(["removethis.js"])
-    .commit("adding npm-shrinkwrap.json")
+    .add(["somefile.js"])
+    .commit("adding somefile.json")
     .push('origin', latestTagName)
     .then(function () {
         //grunt.log("error while shrinkwrapping: " + err.message);
