@@ -37,8 +37,8 @@ git.then(function () {
                 //    });
                 //});
             })
-            //.add(["somefile.js"])
-            //.commit("adding somefile.json")
+            .add(["otherfile.js"])
+            .commit("adding otherfile.json")
             .push('origin', latestTagName)
             .then(function () {
                 //grunt.log("error while shrinkwrapping: " + err.message);
