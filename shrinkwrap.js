@@ -12,11 +12,12 @@ git.then(function () {
     })
     .tags(function(err, tags) {
         latestTagName = tags.all[0];
+        var branchName = "release-" + latestTagName;
         git.then(function() {
                 console.log("Latest tag name:"+latestTagName);
             })
-            .checkout(latestTagName, function (err) {
-                console.log("Checkout tag done:"+latestTagName);
+            .checkoutBranch(branchName, latestTagName, function (err) {
+                console.log("Checkout tag done:"+branchName);
             })
             .then(function () {
                 console.log("did some shit");
@@ -39,7 +40,7 @@ git.then(function () {
             })
             .add(["otherfile.js"])
             .commit("adding otherfile.json")
-            .push('origin', latestTagName)
+            .push('origin', branchName)
             .then(function () {
                 //grunt.log("error while shrinkwrapping: " + err.message);
                 console.log("done");
