@@ -15,7 +15,7 @@ git.then(function () {
         git.then(function() {
                 console.log("Latest tag name:"+latestTagName);
             })
-            .checkoutBranch(latestTagName, latestTagName, function (err) {
+            .checkout(latestTagName, function (err) {
                 console.log("Checkout tag done:"+latestTagName);
             })
             .then(function () {
