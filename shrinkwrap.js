@@ -13,7 +13,7 @@ git.then(function () {
     .tags(function(err, tags) {
         latestTagName = tags.all[0];
     })
-    .checkout(latestTagName, function () {
+    .checkout("v0.0.0", function (err) {
         console.log("Checkout tag done:"+latestTagName);
     })
     .then(function () {
